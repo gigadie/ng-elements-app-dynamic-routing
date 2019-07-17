@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   @Input('state') 
   set state(state: string) {
-    console.log('app1 received state', state);
+    console.log('app3 received state', state);
   }
 
   @Output() message = new EventEmitter<any>();
@@ -27,8 +27,8 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, private config: ConfigService ) { }
 
   ngOnInit() {
-  	this.router.navigateByUrl(`/${this.configData.appBaseRoute}/one`);
   	this.message.emit(`navigation to /${this.configData.appBaseRoute}/one`);
+    this.router.navigateByUrl(`/${this.configData.appBaseRoute}/one`);
   }
 
 }
